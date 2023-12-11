@@ -8,14 +8,15 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   private urlApi = "https://rickandmortyapi.com/api/character";
+
   constructor(private http: HttpClient) { }
 
-  public getCharacter() : Observable<any> {
-    return this.http.get<any>(this.urlApi);
+  public getCharacters(): Observable<Character[]> {
+    return this.http.get<Character[]>(this.urlApi);
   }
 
-  getCharacterById(id: number): Observable<any> {
+  public getCharacterById(id: number): Observable<Character> {
     const url = `${this.urlApi}/${id}`;
-    return this.http.get(url);
+    return this.http.get<Character>(url);
   }
 }

@@ -12,7 +12,7 @@ import { response } from 'express';
 
 export class HomeComponent implements OnInit {
 
-  data: any[] = [];
+  characters: Character[] = [];
 
   constructor(private apiService: ApiService) {}
 
@@ -21,11 +21,10 @@ export class HomeComponent implements OnInit {
   }
 
   llenarData() {
-    this.apiService.getCharacter().subscribe(response => {
-      // Asegúrate de que response.results es un array
-      this.data = response.results;
-      console.log(this.data);
-    })
+    this.apiService.getCharacters().subscribe(response => {
+      this.characters = response;
+      console.log(this.characters);
+    });
   }
 }
 

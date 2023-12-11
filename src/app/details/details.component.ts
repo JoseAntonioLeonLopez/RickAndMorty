@@ -9,24 +9,14 @@ import { ApiService } from '../service/api.service';
 })
 export class DetailsComponent implements OnInit {
 
-  character: any;
+  character: Character | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
     private router: Router
   ) {
-    this.character = {
-      id: null,
-      name: '',
-      status: '',
-      species: '',
-      gender: '',
-      origin: { name: '' },
-      location: { name: '' },
-      image: '',
-      url: ''
-    };
+  
   }
 
   ngOnInit(): void {
