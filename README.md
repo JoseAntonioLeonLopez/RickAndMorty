@@ -1,6 +1,6 @@
 # RickAndMortyAPP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Página hecha con Angular 17 y Bootstrap que se conecta a la API de Rick And Morty: https://rickandmortyapi.com/
 
 ## Development server
 
