@@ -1,3 +1,6 @@
+## Authors
+[José Antonio León](https://github.com/JoseAntonioLeonLopez)
+
 # RickAndMortyAPP
 
 Página hecha con Angular 17 y Bootstrap que se conecta a la API de Rick And Morty: https://rickandmortyapi.com/
