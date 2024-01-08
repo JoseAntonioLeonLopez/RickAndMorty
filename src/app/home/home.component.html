@@ -1,20 +1,20 @@
 <div class="bg-primary bg-gradient py-3">
-    <div class="mb-4 p-3 bg-secondary text-white">
-      <h1>Rick And Morty</h1>
-    </div>
+  <div class="mb-4 p-3 bg-secondary text-white">
+    <h1>Rick And Morty</h1>
+  </div>
 
-    <div class="row">
-      <div *ngFor="let character of data" class="col-md-6 mb-4">
-        <div class="character-card p-3 bg-black text-white rounded">
-          <img [src]="character.image" class="img-fluid" />
-          <h2>{{ character.name }}</h2>
-          <p>Status: {{ character.status }}</p>
-          <p>Species: {{ character.species }}</p>
-          <p>Gender: {{ character.gender }}</p>
-          <p>Origin: {{ character.origin.name }}</p>
-          <p>Location: {{ character.location.name }}</p>
-          <a [routerLink]="['/details', character.id]" class="btn btn-primary">Detalles</a>
-        </div>
+  <div class="row">
+    <div *ngFor="let character of characters" class="col-md-6 mb-4">
+      <div class="character-card p-3 bg-black text-white rounded">
+        <img [src]="character.image" class="img-fluid" />
+        <h2>{{ character.name }}</h2>
+        <p>Status: {{ character.status }}</p>
+        <p>Species: {{ character.species }}</p>
+        <p>Gender: {{ character.gender }}</p>
+        <p>Origin: {{ character.origin.name }}</p> 
+        <p>Location: {{ character.location.name }}</p> 
+        <a [routerLink]="['/details', character.id]" class="btn btn-primary">Detalles</a>
       </div>
     </div>
   </div>
+</div>

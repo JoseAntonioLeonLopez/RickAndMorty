@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../service/api.service';
 import { response } from 'express';
+import { Character } from '../../models/Character';
 
 @Component({
   selector: 'app-home',
@@ -19,12 +20,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.llenarData();
   }
-
+  
   llenarData() {
-    this.apiService.getCharacters().subscribe(response => {
+    this.apiService.getCharacters().subscribe((response: Character[]) => {
       this.characters = response;
-      console.log(this.characters);
+      console.log('characters:', this.characters);
     });
   }
+  
 }
 

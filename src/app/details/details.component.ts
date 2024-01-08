@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
+import { Character } from '../../models/Character';
 
 @Component({
   selector: 'app-details',
