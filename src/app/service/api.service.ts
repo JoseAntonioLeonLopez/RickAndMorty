@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Character } from '../../models/Character';
 
 @Injectable({
@@ -12,8 +12,11 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public getCharacters(): Observable<Character[]> {
-    return this.http.get<Character[]>(this.urlApi);
+  getCharacters(): Observable<Character[]> {
+    return this.http.get<any>(this.urlApi)
+      .pipe(
+        map(response => response.results)
+      );
   }
 
   public getCharacterById(id: number): Observable<Character> {
